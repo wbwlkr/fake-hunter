@@ -28,7 +28,11 @@ class FakeHunterSpider(scrapy.Spider):
     def parse(self, response):
         # parse list of identical images
         for fake in response.css('a[href*="/imgres"]'):
-            yield {'img-url': fake.css('a::attr("href")').extract_first()}
+            yield {
+                'imgres': fake.css('a::attr("href")').extract_first(),
+                'imgurl': 'TODO',
+                'imgrefurl': 'TODO',
+            }
 
         # follow pagination link
         next_page = response.css('#nav td.cur + td a.fl::attr("href")').extract_first()
