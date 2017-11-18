@@ -3,8 +3,8 @@ Fake-Hunter stalks possible fakes by searching for copies of a given image url
 scrapy runspider hunt.py -o fakes.json
 '''
 
-import scrapy
 from urllib.parse import urlsplit, parse_qs
+import scrapy
 
 class FakeHunterSpider(scrapy.Spider):
     """Search same pictures accross the web to stalk copies and fakes.
