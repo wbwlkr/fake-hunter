@@ -4,6 +4,7 @@ scrapy runspider hunt.py -o fakes.json
 '''
 
 import scrapy
+from urllib.parse import urlsplit, parse_qs
 
 class FakeHunterSpider(scrapy.Spider):
     """Search same pictures accross the web to stalk copies and fakes.
@@ -28,10 +29,12 @@ class FakeHunterSpider(scrapy.Spider):
     def parse(self, response):
         # parse list of identical images
         for fake in response.css('a[href*="/imgres"]'):
+            urltosplit = fake.css('a::attr("href")').extract_first()
+            params = parse_qs(urlsplit(urltosplit).query)
             yield {
-                'imgres': fake.css('a::attr("href")').extract_first(),
-                'imgurl': 'TODO',
-                'imgrefurl': 'TODO',
+                'domain': urlsplit(params['imgurl'][0]).netloc,
+                'source': params['imgrefurl'][0],
+                'imgurl': params['imgurl'][0],
             }
 
         # follow pagination link
