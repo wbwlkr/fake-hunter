@@ -2,7 +2,7 @@
 
 ## Description
 
-Fake Hunter stalks possible fakes by searching for copies of a given image url.
+Fake Hunter stalks possible fakes by searching for copies of a given image's url.
 
 The spider use Google Reverse Image Search and scrap the url of every images of the list.
 
@@ -27,7 +27,9 @@ scrapy runspider hunt.py -o fakes.json
 For each copy fount, the data related to the following columns will be written in a json file or csv:
 
 ```
-'img-url'
+'domain' (the domain of the image's url)
+'image'  (the url of the image)
+'sauce' (the "source" url of the page where the image was found)
 ```
 
 ## Requirements

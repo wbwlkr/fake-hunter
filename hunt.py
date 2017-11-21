@@ -33,8 +33,8 @@ class FakeHunterSpider(scrapy.Spider):
             params = parse_qs(urlsplit(urltosplit).query)
             yield {
                 'domain': urlsplit(params['imgurl'][0]).netloc,
-                'source': params['imgrefurl'][0],
-                'imgurl': params['imgurl'][0],
+                'image': params['imgurl'][0],
+                'sauce': params['imgrefurl'][0],
             }
 
         # follow pagination link
