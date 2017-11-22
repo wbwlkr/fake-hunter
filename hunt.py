@@ -32,7 +32,7 @@ class FakeHunterSpider(scrapy.Spider):
             urltosplit = fake.css('a::attr("href")').extract_first()
             params = parse_qs(urlsplit(urltosplit).query)
             yield {
-                'domain': urlsplit(params['imgurl'][0]).netloc,
+                'domain': urlsplit(params['imgrefurl'][0]).netloc,
                 'image': params['imgurl'][0],
                 'sauce': params['imgrefurl'][0],
             }
