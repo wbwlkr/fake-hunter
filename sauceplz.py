@@ -1,15 +1,15 @@
 '''
-Fake-Hunter stalks possible fakes by searching for copies of a given image url
-scrapy runspider hunt.py -o fakes.json
+Sauceplz stalks possible fakes by searching for source and copies of a given image url
+scrapy runspider sauceplz.py -o fakes.json
 '''
 
 from urllib.parse import urlsplit, parse_qs
 import scrapy
 
-class FakeHunterSpider(scrapy.Spider):
+class SaucePlzSpider(scrapy.Spider):
     """Search same pictures accross the web to stalk copies and fakes.
     """
-    name = 'fake-hunter'
+    name = 'sauce-plz'
     start_urls = [
         'https://images.google.com/searchbyimage?'
         'image_url=https://www.cybevasion.fr/chambres/france/35/38666_305220.jpg',
