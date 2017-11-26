@@ -8,6 +8,13 @@ The spider use Google Reverse Image Search and scrap the url of every images of 
 
 To extract the data, SaucePlz uses the open source and collaborative framework [Scrapy](https://github.com/scrapy/scrapy).
 
+## Origin of the name
+
+The word "sauce" is sometimes used in all caps along with "plz", is a slang version of the word "source".
+
+It is used (usually in a pleading tone) as a request to someone who posted a claim, a picture or anything that raises interest but is unsourced/not complete. Its goal is to prove it, confirm it and to see more information/pictures/anything from the initial content. [source](http://knowyourmeme.com/memes/sauce)
+
+
 ## Installation
 
 To download the script, type the code below in a shell :
